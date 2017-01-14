@@ -1,1 +1,2 @@
 c:\users\reinoud\documents\visual studio 2015\Projects\Live-Performance\Live-Performance\bin\Debug\Live-Performance.exe.config
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\bin\Debug\Live-Performance.exe.config
