@@ -96,12 +96,14 @@
     <Compile Include="Repositories\MSSQLRepository\MSSQLDrankRepository.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLIngredientRepository.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLKlantRepository.cs" />
+    <Compile Include="Repositories\MSSQLRepository\MSSQLPizzaRepository.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLProductRepository.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLTemplateRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IBestellingRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IDrankRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IIngredientRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IKlantRepository.cs" />
+    <Compile Include="Repositories\RepositoryInterfaces\IPizzaRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IProductRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\ITemplateRepository.cs" />
