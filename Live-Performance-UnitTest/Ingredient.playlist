@@ -1,0 +1,7 @@
+<Playlist Version="1.0">
+<Add Test="Live_Performance_UnitTest.TU_MSSQLIngredientRepository.GetAll" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLIngredientRepository.GetById" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLIngredientRepository.Insert" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLIngredientRepository.Update" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLIngredientRepository.Delete" />
+</Playlist>

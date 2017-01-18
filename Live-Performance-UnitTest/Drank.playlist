@@ -1,0 +1,7 @@
+<Playlist Version="1.0">
+<Add Test="Live_Performance_UnitTest.TU_MSSQLDrankRepository.GetAll" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLDrankRepository.GetById" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLDrankRepository.Insert" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLDrankRepository.Update" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLDrankRepository.Delete" />
+</Playlist>
