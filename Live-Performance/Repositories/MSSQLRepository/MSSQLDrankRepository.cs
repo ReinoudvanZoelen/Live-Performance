@@ -15,7 +15,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
 
         private Drank CreateObjectFromReader(SqlDataReader reader)
         {
-            int id = Convert.ToInt32(reader["ID"]);
+            int id = Convert.ToInt32(reader["Id"]);
             string naam = Convert.ToString(reader["Naam"]);
             decimal verkoopprijs = Convert.ToDecimal(reader["Verkoopprijs"]);
             decimal inkoopprijs = Convert.ToDecimal(reader["Inkoopprijs"]);

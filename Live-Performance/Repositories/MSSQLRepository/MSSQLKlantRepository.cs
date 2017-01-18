@@ -11,7 +11,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
 {
     public class MSSQLKlantRepository:Database, IKlantRepository
     {
-        private string StartQuery = "Select * From klant";
+        private string StartQuery = "Select * From Klant";
 
         private Klant CreateObjectFromReader(SqlDataReader reader)
         {

@@ -11,7 +11,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
 {
     class MSSQLProductRepository:Database,IProductRepository
     {
-        private string StartQuery = "Select * from product whatever";
+        private string StartQuery = "Select * from Pizza";
 
         private Product CreateObjectFromReader(SqlDataReader reader)
         {
