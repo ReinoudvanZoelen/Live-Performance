@@ -13,5 +13,19 @@ namespace Live_Performance.Classes
         public List<Product> Producten { get; set; }
         public bool Bezorging { get; set; }
         public DateTime Bestelmoment { get; set; }
+
+        public Bestelling()
+        {
+
+        }
+
+        public Bestelling(int id, Klant klant, List<Product> producten, bool bezorging, DateTime bestelmoment)
+        {
+            this.ID = id;
+            this.Klant = klant;
+            this.Producten = producten;
+            this.Bezorging = bezorging;
+            this.Bestelmoment = bestelmoment;
+        }
     }
 }

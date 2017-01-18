@@ -9,42 +9,27 @@ using Live_Performance.Repositories.RepositoryInterfaces;
 
 namespace Live_Performance.Repositories.MSSQLRepository
 {
-    public class MSSQLTemplateRepository : Database, ITemplateRepository
+    public class MSSQLKlantRepository:Database, IKlantRepository
     {
-        #region
-        //Hier komen de andere MSSQLRepositories die we nodig hebben, bijv:
+        private string StartQuery = "Select * From klant";
 
-        //MSSQLTramRepository TramRepository = new MSSQLTramRepository();
-        //MSSQLEmployeeRepository EmployeeRepository = new MSSQLEmployeeRepository()
-        #endregion
-
-
-        private string StartQuery = "Select * from Table";
-
-        private Template CreateObjectFromReader(SqlDataReader reader)
+        private Klant CreateObjectFromReader(SqlDataReader reader)
         {
             int id = Convert.ToInt32(reader["ID"]);
             string naam = Convert.ToString(reader["Naam"]);
+            string postcode = Convert.ToString(reader["Postcode"]);
+            string huisnummer = Convert.ToString(reader["Huisnummer"]);
 
-            #region Properties that can be NULL in the database
-            string eigenschap = "";
+            Klant klant = new Klant(id, naam, postcode, huisnummer);
 
-            if (reader["Eigenschap"] != System.DBNull.Value)
-            {
-                eigenschap = Convert.ToString(reader["Eigenschap"]);
-            }
-            #endregion
-
-            Template template = new Template(id, naam);
-
-            return template;
+            return klant;
         }
 
-        public bool Insert(Template entity)
+        public bool Insert(Klant entity)
         {
             bool insert = false;
 
-            string query = "INSERT INTO Template(Template_ID, TemplateName) values (@Template_ID, @TemplateName)";
+            string query = "INSERT INTO Klant(Naam, Postcode, Huisnummer) values (@Naam, @Postcode, @Huisnummer)";
 
             try
             {
@@ -52,9 +37,10 @@ namespace Live_Performance.Repositories.MSSQLRepository
                 {
                     using (SqlCommand command = new SqlCommand(query, Connection))
                     {
-                        command.Parameters.AddWithValue("@Template_ID", entity.Id);
-                        command.Parameters.AddWithValue("@TemplateName", entity.Name);
-                        
+                        command.Parameters.AddWithValue("@Naam", entity.Naam);
+                        command.Parameters.AddWithValue("@Postcode", entity.Postcode);
+                        command.Parameters.AddWithValue("@Huisnummer", entity.Huisnummer);
+
                         command.ExecuteNonQuery();
 
                         insert = true;
@@ -69,11 +55,11 @@ namespace Live_Performance.Repositories.MSSQLRepository
             return insert;
         }
 
-        public bool Update(Template entity)
+        public bool Update(Klant entity)
         {
             bool update = false;
 
-            string query = "Update Template SET TemplateName = @TemplateName, OtherProperty = @OtherProperty WHERE ID = @ID";
+            string query = "Update Klant SET Naam = @Naam, Postcode = @Postode, Huisnummer = @Huisnummer WHERE ID = @ID";
 
             try
             {
@@ -81,10 +67,11 @@ namespace Live_Performance.Repositories.MSSQLRepository
                 {
                     using (SqlCommand command = new SqlCommand(query, Connection))
                     {
-                        command.Parameters.AddWithValue("@TemplateName", entity.Name);
-                        command.Parameters.AddWithValue("@OtherProperty", entity.Name);
+                        command.Parameters.AddWithValue("@Naam", entity.Naam);
+                        command.Parameters.AddWithValue("@Postcode", entity.Postcode);
+                        command.Parameters.AddWithValue("@Huisnummer", entity.Huisnummer);
 
-                        command.Parameters.AddWithValue("@ID", entity.Id);
+                        command.Parameters.AddWithValue("@ID", entity.ID);
 
                         command.ExecuteNonQuery();
 
@@ -104,7 +91,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
         {
             bool delete = false;
 
-            string query = "Delete from Template where ID = @ID";
+            string query = "Delete from Klant where ID = @ID";
 
             try
             {
@@ -128,9 +115,9 @@ namespace Live_Performance.Repositories.MSSQLRepository
             return delete;
         }
 
-        public Template GetById(int id)
+        public Klant GetById(int id)
         {
-            Template template = new Template();
+            Klant klant = new Klant();
 
             string query = StartQuery + " where ID = @ID";
 
@@ -146,7 +133,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
                         {
                             while (reader.Read())
                             {
-                                template = CreateObjectFromReader(reader);
+                                klant = CreateObjectFromReader(reader);
                             }
                         }
                     }
@@ -157,12 +144,12 @@ namespace Live_Performance.Repositories.MSSQLRepository
                 CloseConnection();
             }
 
-            return template;
+            return klant;
         }
 
-        public List<Template> GetAll()
+        public List<Klant> GetAll()
         {
-            List<Template> templates = new List<Template>();
+            List<Klant> klanten = new List<Klant>();
 
             string query = StartQuery;
 
@@ -176,7 +163,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
                         {
                             while (reader.Read())
                             {
-                                templates.Add(CreateObjectFromReader(reader));
+                                klanten.Add(CreateObjectFromReader(reader));
                             }
                         }
                     }
@@ -187,7 +174,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
                 CloseConnection();
             }
 
-            return templates;
+            return klanten;
         }
     }
 }

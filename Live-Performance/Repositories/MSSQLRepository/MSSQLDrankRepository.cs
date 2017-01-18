@@ -9,42 +9,28 @@ using Live_Performance.Repositories.RepositoryInterfaces;
 
 namespace Live_Performance.Repositories.MSSQLRepository
 {
-    public class MSSQLTemplateRepository : Database, ITemplateRepository
+    public class MSSQLDrankRepository:Database, IDrankRepository
     {
-        #region
-        //Hier komen de andere MSSQLRepositories die we nodig hebben, bijv:
+        private string StartQuery = "Select * From Drank";
 
-        //MSSQLTramRepository TramRepository = new MSSQLTramRepository();
-        //MSSQLEmployeeRepository EmployeeRepository = new MSSQLEmployeeRepository()
-        #endregion
-
-
-        private string StartQuery = "Select * from Table";
-
-        private Template CreateObjectFromReader(SqlDataReader reader)
+        private Drank CreateObjectFromReader(SqlDataReader reader)
         {
             int id = Convert.ToInt32(reader["ID"]);
             string naam = Convert.ToString(reader["Naam"]);
+            decimal verkoopprijs = Convert.ToDecimal(reader["Verkoopprijs"]);
+            decimal inkoopprijs = Convert.ToDecimal(reader["Inkoopprijs"]);
+            bool alcoholhoudend = Convert.ToBoolean(reader["Alcoholhoudend"]);
 
-            #region Properties that can be NULL in the database
-            string eigenschap = "";
+            Drank drank = new Drank(id, naam, verkoopprijs, inkoopprijs, alcoholhoudend);
 
-            if (reader["Eigenschap"] != System.DBNull.Value)
-            {
-                eigenschap = Convert.ToString(reader["Eigenschap"]);
-            }
-            #endregion
-
-            Template template = new Template(id, naam);
-
-            return template;
+            return drank;
         }
 
-        public bool Insert(Template entity)
+        public bool Insert(Drank entity)
         {
             bool insert = false;
 
-            string query = "INSERT INTO Template(Template_ID, TemplateName) values (@Template_ID, @TemplateName)";
+            string query = "INSERT INTO Drank(Naam, Verkoopprijs, Inkoopprijs, Alcoholhoudend) values (@Naam, @Verkoopprijs, @Inkoopprijs, @Alcoholhoudend)";
 
             try
             {
@@ -52,9 +38,11 @@ namespace Live_Performance.Repositories.MSSQLRepository
                 {
                     using (SqlCommand command = new SqlCommand(query, Connection))
                     {
-                        command.Parameters.AddWithValue("@Template_ID", entity.Id);
-                        command.Parameters.AddWithValue("@TemplateName", entity.Name);
-                        
+                        command.Parameters.AddWithValue("@Naam", entity.Naam);
+                        command.Parameters.AddWithValue("@Verkoopprijs", entity.Verkoopprijs);
+                        command.Parameters.AddWithValue("@Inkoopprijs", entity.Inkoopprijs);
+                        command.Parameters.AddWithValue("@Alcoholhoudend", Convert.ToInt32(entity.Alcoholhoudend));
+
                         command.ExecuteNonQuery();
 
                         insert = true;
@@ -69,11 +57,11 @@ namespace Live_Performance.Repositories.MSSQLRepository
             return insert;
         }
 
-        public bool Update(Template entity)
+        public bool Update(Drank entity)
         {
             bool update = false;
 
-            string query = "Update Template SET TemplateName = @TemplateName, OtherProperty = @OtherProperty WHERE ID = @ID";
+            string query = "Update Drank SET Naam = @Naam, Verkoopprijs = @Verkoopprijs, Inkoopprijs = @Inkoopprijs, Alcoholhoudend = @Alcoholhoudend WHERE ID = @ID";
 
             try
             {
@@ -81,10 +69,12 @@ namespace Live_Performance.Repositories.MSSQLRepository
                 {
                     using (SqlCommand command = new SqlCommand(query, Connection))
                     {
-                        command.Parameters.AddWithValue("@TemplateName", entity.Name);
-                        command.Parameters.AddWithValue("@OtherProperty", entity.Name);
+                        command.Parameters.AddWithValue("@Naam", entity.Naam);
+                        command.Parameters.AddWithValue("@Verkoopprijs", entity.Verkoopprijs);
+                        command.Parameters.AddWithValue("@Inkoopprijs", entity.Inkoopprijs);
+                        command.Parameters.AddWithValue("@Alcoholhoudend", Convert.ToInt32(entity.Alcoholhoudend));
 
-                        command.Parameters.AddWithValue("@ID", entity.Id);
+                        command.Parameters.AddWithValue("@ID", entity.ID);
 
                         command.ExecuteNonQuery();
 
@@ -104,7 +94,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
         {
             bool delete = false;
 
-            string query = "Delete from Template where ID = @ID";
+            string query = "Delete from Drank where ID = @ID";
 
             try
             {
@@ -128,9 +118,9 @@ namespace Live_Performance.Repositories.MSSQLRepository
             return delete;
         }
 
-        public Template GetById(int id)
+        public Drank GetById(int id)
         {
-            Template template = new Template();
+            Drank drank = new Drank();
 
             string query = StartQuery + " where ID = @ID";
 
@@ -146,7 +136,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
                         {
                             while (reader.Read())
                             {
-                                template = CreateObjectFromReader(reader);
+                                drank = CreateObjectFromReader(reader);
                             }
                         }
                     }
@@ -157,12 +147,12 @@ namespace Live_Performance.Repositories.MSSQLRepository
                 CloseConnection();
             }
 
-            return template;
+            return drank;
         }
 
-        public List<Template> GetAll()
+        public List<Drank> GetAll()
         {
-            List<Template> templates = new List<Template>();
+            List<Drank> dranken = new List<Drank>();
 
             string query = StartQuery;
 
@@ -176,7 +166,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
                         {
                             while (reader.Read())
                             {
-                                templates.Add(CreateObjectFromReader(reader));
+                                dranken.Add(CreateObjectFromReader(reader));
                             }
                         }
                     }
@@ -187,7 +177,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
                 CloseConnection();
             }
 
-            return templates;
+            return dranken;
         }
     }
 }

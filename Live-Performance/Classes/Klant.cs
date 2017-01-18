@@ -12,5 +12,19 @@ namespace Live_Performance.Classes
         public string Naam { get; set; }
         public string Postcode { get; set; }
         public string Huisnummer { get; set; }
+
+
+        public Klant(int id, string naam, string postcode, string huisnummer)
+        {
+            ID = id;
+            Naam = naam;
+            Postcode = postcode;
+            Huisnummer = huisnummer;
+        }
+
+        public Klant()
+        {
+            
+        }
     }
 }

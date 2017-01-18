@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Live_Performance.Classes;
 
 namespace Live_Performance.Repositories.RepositoryInterfaces
 {
-    public interface IRepository<T> where T : class
+    interface IProductRepository
     {
-        bool Insert(T entity);
-        bool Update(T entity);
-        bool Delete(int id);
-        T GetById(int id);
-        List<T> GetAll();
+        List<Product> GetByBestellingID(int id);
     }
 }
-

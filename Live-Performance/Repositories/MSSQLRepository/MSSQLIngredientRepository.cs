@@ -6,23 +6,18 @@ using System.Threading.Tasks;
 using Live_Performance.Classes;
 using Live_Performance.Repositories.RepositoryInterfaces;
 
-namespace Live_Performance.Repositories.Context
+namespace Live_Performance.Repositories.MSSQLRepository
 {
-    class TemplateContext:ITemplateRepository
+    class MSSQLIngredientRepository:Database, IIngredientRepository
     {
-        private ITemplateRepository context;
+        private string StartQuery = "Select * From Product where [Type] = 'Ingredient'";
 
-        public TemplateContext(ITemplateRepository context)
-        {
-            this.context = context;
-        }
-
-        public bool Insert(Template entity)
+        public bool Insert(Ingredient entity)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Template entity)
+        public bool Update(Ingredient entity)
         {
             throw new NotImplementedException();
         }
@@ -32,12 +27,12 @@ namespace Live_Performance.Repositories.Context
             throw new NotImplementedException();
         }
 
-        public Template GetById(int id)
+        public Ingredient GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Template> GetAll()
+        public List<Ingredient> GetAll()
         {
             throw new NotImplementedException();
         }

@@ -7,3 +7,6 @@ C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\
 C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live-Performance.csproj.GenerateResource.Cache
 C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live-Performance.exe
 C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live-Performance.pdb
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live_Performance.Forms.Create.resources
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live_Performance.Forms.MainForm.resources
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live_Performance.Forms.Receipt.resources
