@@ -53,8 +53,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\TemplateLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Context\TemplateContext.cs" />
     <Compile Include="Repositories\MSSQLRepository\Database.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLTemplateRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IRepository.cs" />

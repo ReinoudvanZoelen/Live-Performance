@@ -14,9 +14,9 @@ namespace Live_Performance.Repositories.MSSQLRepository
         public bool OpenConnection()
         {
             Server = "mssql.fhict.local";
-            DB = "dbi354261";
-            Uid = "dbi354261";
-            Password = "EYECT4RAILS";
+            DB = "dbi354261_bios";
+            Uid = "dbi354261_bios";
+            Password = "CYEn440g9ZZJa0IYvBTC";
             string connectionString = "SERVER=" + Server + ";" + "DATABASE=" + 
                 DB + ";" + "UID=" + Uid + ";" + "PASSWORD=" + Password + ";";
 

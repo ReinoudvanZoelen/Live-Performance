@@ -1,0 +1,9 @@
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance-UnitTest\bin\Debug\Live-Performance-UnitTest.dll
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance-UnitTest\bin\Debug\Live-Performance-UnitTest.pdb
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance-UnitTest\bin\Debug\Live-Performance.exe
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance-UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance-UnitTest\bin\Debug\Live-Performance.pdb
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance-UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance-UnitTest\obj\Debug\Live-Performance-UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance-UnitTest\obj\Debug\Live-Performance-UnitTest.dll
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance-UnitTest\obj\Debug\Live-Performance-UnitTest.pdb

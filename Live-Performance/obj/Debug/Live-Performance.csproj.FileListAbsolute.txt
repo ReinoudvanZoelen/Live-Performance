@@ -1,2 +1,9 @@
 c:\users\reinoud\documents\visual studio 2015\Projects\Live-Performance\Live-Performance\bin\Debug\Live-Performance.exe.config
 C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\bin\Debug\Live-Performance.exe.config
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\bin\Debug\Live-Performance.exe
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\bin\Debug\Live-Performance.pdb
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live-Performance.csprojResolveAssemblyReference.cache
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live_Performance.Properties.Resources.resources
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live-Performance.csproj.GenerateResource.Cache
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live-Performance.exe
+C:\Users\Reinoud\Desktop\Live Performance\Live-Performance\Live-Performance\obj\Debug\Live-Performance.pdb
