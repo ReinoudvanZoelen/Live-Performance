@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Live_Performance.Logic;
 
 namespace Live_Performance.Forms
 {
     public partial class MainForm : Form
     {
+        private MainFormLogic logic = new MainFormLogic();
+
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void Fill()
+        {
+            
         }
 
         private void button_Receipt_Click(object sender, EventArgs e)

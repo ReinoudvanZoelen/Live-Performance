@@ -98,6 +98,7 @@
     <Compile Include="Repositories\MSSQLRepository\MSSQLKlantRepository.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLPizzaRepository.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLProductRepository.cs" />
+    <Compile Include="Repositories\MSSQLRepository\MSSQLSaladeRepository.cs" />
     <Compile Include="Repositories\MSSQLRepository\MSSQLTemplateRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IBestellingRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IDrankRepository.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Repositories\RepositoryInterfaces\IPizzaRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IProductRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\IRepository.cs" />
+    <Compile Include="Repositories\RepositoryInterfaces\ISaladeRepository.cs" />
     <Compile Include="Repositories\RepositoryInterfaces\ITemplateRepository.cs" />
     <EmbeddedResource Include="Forms\Create.resx">
       <DependentUpon>Create.cs</DependentUpon>
