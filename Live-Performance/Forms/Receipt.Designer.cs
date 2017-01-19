@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listbox_Receipt = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // listbox_Receipt
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 44);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(258, 196);
-            this.listBox1.TabIndex = 0;
+            this.listbox_Receipt.FormattingEnabled = true;
+            this.listbox_Receipt.ItemHeight = 16;
+            this.listbox_Receipt.Location = new System.Drawing.Point(12, 44);
+            this.listbox_Receipt.Name = "listbox_Receipt";
+            this.listbox_Receipt.Size = new System.Drawing.Size(258, 196);
+            this.listbox_Receipt.TabIndex = 0;
+            this.listbox_Receipt.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listbox_Receipt_MouseDoubleClick);
             // 
             // label1
             // 
@@ -56,7 +57,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listbox_Receipt);
             this.Name = "Receipt";
             this.Text = "Bonnetje";
             this.ResumeLayout(false);
@@ -66,7 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listbox_Receipt;
         private System.Windows.Forms.Label label1;
     }
 }

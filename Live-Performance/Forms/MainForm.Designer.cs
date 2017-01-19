@@ -135,6 +135,7 @@
             this.listbox_Pizzas.Name = "listbox_Pizzas";
             this.listbox_Pizzas.Size = new System.Drawing.Size(371, 100);
             this.listbox_Pizzas.TabIndex = 0;
+            this.listbox_Pizzas.SelectedIndexChanged += new System.EventHandler(this.listbox_Pizzas_SelectedIndexChanged);
             this.listbox_Pizzas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listbox_Pizzas_MouseDoubleClick);
             // 
             // button_NewItem

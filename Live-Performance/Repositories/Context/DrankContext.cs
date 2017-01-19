@@ -41,5 +41,10 @@ namespace Live_Performance.Repositories.Context
         {
             return context.GetAll();
         }
+
+        public List<Drank> GetByBestellingID(int id)
+        {
+            return context.GetByBestellingID(id);
+        }
     }
 }

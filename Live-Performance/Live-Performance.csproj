@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="Logic\CreateLogic.cs" />
     <Compile Include="Logic\MainFormLogic.cs" />
+    <Compile Include="Logic\ReceiptLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Context\BestellingContext.cs" />

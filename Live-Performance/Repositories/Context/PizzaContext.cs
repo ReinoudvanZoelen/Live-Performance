@@ -41,5 +41,10 @@ namespace Live_Performance.Repositories.Context
         {
             return this.context.GetAll();
         }
+
+        public List<Pizza> GetByBestellingID(int id)
+        {
+            return context.GetByBestellingID(id);
+        }
     }
 }

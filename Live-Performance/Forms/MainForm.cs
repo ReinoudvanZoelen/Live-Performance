@@ -52,8 +52,7 @@ namespace Live_Performance.Forms
             {
                 listbox_Salades.Items.Add(salade);
             }
-
-            combobox_Klanten.Items.Add("Bestelling ophalen");
+            
             foreach (Klant klant in logic.KlantContext.GetAll())
             {
                 combobox_Klanten.Items.Add(klant);
@@ -91,12 +90,7 @@ namespace Live_Performance.Forms
         {
             if (Pizzas.Count != 0 || Dranken.Count != 0 || Salades.Count != 0)
             {
-                Klant klant = null;
-
-                if (combobox_Klanten.SelectedText != "Bestelling ophalen")
-                {
-                    klant = (Klant)combobox_Klanten.SelectedItem;
-                }
+                Klant klant = combobox_Klanten.SelectedItem as Klant;
 
                 logic.NewBestelling(klant, Pizzas, Dranken, Salades);
 
@@ -150,6 +144,11 @@ namespace Live_Performance.Forms
         private void button_Refresh_Click(object sender, EventArgs e)
         {
             Fill();
+        }
+
+        private void listbox_Pizzas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,5 +9,6 @@ namespace Live_Performance.Repositories.RepositoryInterfaces
 {
     public interface ISaladeRepository:IRepository<Salade>
     {
+        List<Salade> GetByBestellingID(int id);
     }
 }

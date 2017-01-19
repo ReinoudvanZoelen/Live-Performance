@@ -9,5 +9,6 @@ namespace Live_Performance.Repositories.RepositoryInterfaces
 {
     public interface IDrankRepository:IRepository<Drank>
     {
+        List<Drank> GetByBestellingID(int id);
     }
 }

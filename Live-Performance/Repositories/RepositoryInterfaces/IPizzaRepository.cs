@@ -9,5 +9,6 @@ namespace Live_Performance.Repositories.RepositoryInterfaces
 {
     public interface IPizzaRepository:IRepository<Pizza>
     {
+        List<Pizza> GetByBestellingID(int id);
     }
 }

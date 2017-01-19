@@ -8,7 +8,7 @@ using Live_Performance.Repositories.RepositoryInterfaces;
 
 namespace Live_Performance.Repositories.Context
 {
-    public class SaladeContext:ISaladeRepository
+    public class SaladeContext : ISaladeRepository
     {
         private ISaladeRepository context;
 
@@ -24,7 +24,7 @@ namespace Live_Performance.Repositories.Context
 
         public bool Update(Salade entity)
         {
-return context.Update(entity);
+            return context.Update(entity);
         }
 
         public bool Delete(int id)
@@ -40,6 +40,11 @@ return context.Update(entity);
         public List<Salade> GetAll()
         {
             return context.GetAll();
+        }
+
+        public List<Salade> GetByBestellingID(int id)
+        {
+            return context.GetByBestellingID(id);
         }
     }
 }

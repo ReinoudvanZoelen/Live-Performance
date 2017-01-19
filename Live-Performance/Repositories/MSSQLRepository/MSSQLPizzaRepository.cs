@@ -44,7 +44,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
             {
                 afmetingen[2] = Convert.ToInt32(reader["Afmeting_C"]);
             }
-            
+
             //
             // Starts processing data, get all of the associated ingredients
             //
@@ -59,13 +59,13 @@ namespace Live_Performance.Repositories.MSSQLRepository
             //
 
             decimal[] prijzen = CalculateVerkoopInkoopPrijzen(ingredienten);
-            
+
             // 
             // Call the method to calculate the surface area
             //
 
             double oppervlakte = CalculateOppervlakte(afmetingen);
-            
+
             //
             // Calculate the final prices 
             // 
@@ -78,7 +78,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
             //
 
             string bodemtype = GetBodemtype(ingredienten);
-            
+
             //
             // Put it all together and return the object
             //
@@ -161,7 +161,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
 
             string query = "INSERT INTO Pizza(Naam, Custom, Oppervlakte, Afmeting_A, Afmeting_B, Afmeting_C, Glutenvrij) " +
                            "values (@Naam, @Custom, @Oppervlakte, @Afmeting_A, @Afmeting_B, @Afmeting_C, @Glutenvrij)";
-            
+
             entity.Oppervlakte = CalculateOppervlakte(entity.Afmetingen);
 
             try
@@ -190,7 +190,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
             {
                 CloseConnection();
             }
-            
+
             return insert;
         }
 
@@ -368,6 +368,42 @@ namespace Live_Performance.Repositories.MSSQLRepository
                 {
                     using (SqlCommand command = new SqlCommand(query, Connection))
                     {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                pizzas.Add(CreateObjectFromReader(reader));
+                            }
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return pizzas;
+        }
+
+        public List<Pizza> GetByBestellingID(int id)
+        {
+            List<Pizza> pizzas = new List<Pizza>();
+
+            string query =
+    "Select p.Id, P.Naam, P.Custom, P.Oppervlakte, " +
+    "P.Afmeting_A, P.Afmeting_B, P.Afmeting_C, P.Glutenvrij " +
+    "From Pizza as P join BestellingProducten " +
+    "as BP on BP.PizzaID=P.Id where BP.BestellingID = @BestellingID";
+
+            try
+            {
+                if (OpenConnection())
+                {
+                    using (SqlCommand command = new SqlCommand(query, Connection))
+                    {
+                        command.Parameters.AddWithValue("@BestellingID", id);
+
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())

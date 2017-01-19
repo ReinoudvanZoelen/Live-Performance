@@ -179,5 +179,41 @@ namespace Live_Performance.Repositories.MSSQLRepository
 
             return dranken;
         }
+
+        public List<Drank> GetByBestellingID(int id)
+        {
+            List<Drank> dranken = new List<Drank>();
+
+            string query =
+                "Select D.Id, D.Naam, D.Verkoopprijs, D.Inkoopprijs, " +
+                "D.Alcoholhoudend From Drank as D " +
+                "join BestellingProducten as BP on BP.PizzaID=D.Id " +
+                "where BP.BestellingID = @BestellingID";
+
+            try
+            {
+                if (OpenConnection())
+                {
+                    using (SqlCommand command = new SqlCommand(query, Connection))
+                    {
+                        command.Parameters.AddWithValue("@BestellingID", id);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                dranken.Add(CreateObjectFromReader(reader));
+                            }
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return dranken;
+        }
     }
 }
