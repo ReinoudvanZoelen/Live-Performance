@@ -15,7 +15,9 @@ namespace Live_Performance.Forms
     public partial class MainForm : Form
     {
         private MainFormLogic logic = new MainFormLogic();
-        private List<Product> Bestelling = new List<Product>();
+        private List<Pizza> Pizzas = new List<Pizza>();
+        private List<Drank> Dranken = new List<Drank>();
+        private List<Salade> Salades = new List<Salade>();
 
         public MainForm()
         {
@@ -32,6 +34,10 @@ namespace Live_Performance.Forms
             listbox_Bestelling.Items.Clear();
             combobox_Klanten.Items.Clear();
 
+            foreach (Bestelling bestelling in logic.GetOvenList())
+            {
+                listbox_Oven.Items.Add(bestelling);
+            }
             foreach (Pizza pizza in logic.PizzaContext.GetAll())
             {
                 listbox_Pizzas.Items.Add(pizza);
@@ -47,12 +53,21 @@ namespace Live_Performance.Forms
                 listbox_Salades.Items.Add(salade);
             }
 
+            combobox_Klanten.Items.Add("Bestelling ophalen");
             foreach (Klant klant in logic.KlantContext.GetAll())
             {
                 combobox_Klanten.Items.Add(klant);
             }
 
-            foreach (Product product in Bestelling)
+            foreach (Pizza product in Pizzas)
+            {
+                listbox_Bestelling.Items.Add(product);
+            }
+            foreach (Drank product in Dranken)
+            {
+                listbox_Bestelling.Items.Add(product);
+            }
+            foreach (Salade product in Salades)
             {
                 listbox_Bestelling.Items.Add(product);
             }
@@ -68,6 +83,73 @@ namespace Live_Performance.Forms
         {
             Create create = new Create();
             create.Show();
+        }
+
+
+
+        private void button_SaveBestelling_Click(object sender, EventArgs e)
+        {
+            if (Pizzas.Count != 0 || Dranken.Count != 0 || Salades.Count != 0)
+            {
+                Klant klant = null;
+
+                if (combobox_Klanten.SelectedText != "Bestelling ophalen")
+                {
+                    klant = (Klant)combobox_Klanten.SelectedItem;
+                }
+
+                logic.NewBestelling(klant, Pizzas, Dranken, Salades);
+
+                Pizzas.Clear();
+                Dranken.Clear();
+                Salades.Clear();
+
+                Fill();
+            }
+        }
+
+        private void listbox_Pizzas_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = ((ListBox)sender).IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+                Pizza product = (Pizza)((ListBox)sender).SelectedItem;
+
+                Pizzas.Add(product);
+
+                Fill();
+            }
+        }
+
+        private void listbox_Dranken_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = ((ListBox)sender).IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+                Drank product = (Drank)((ListBox)sender).SelectedItem;
+
+                Dranken.Add(product);
+
+                Fill();
+            }
+        }
+
+        private void listbox_Salades_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = ((ListBox)sender).IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+                Salade product = (Salade)((ListBox)sender).SelectedItem;
+
+                Salades.Add(product);
+
+                Fill();
+            }
+        }
+
+        private void button_Refresh_Click(object sender, EventArgs e)
+        {
+            Fill();
         }
     }
 }

@@ -42,6 +42,7 @@
             this.button_Receipt = new System.Windows.Forms.Button();
             this.button_SaveBestelling = new System.Windows.Forms.Button();
             this.button_RefreshOven = new System.Windows.Forms.Button();
+            this.button_Refresh = new System.Windows.Forms.Button();
             this.groupbox_Oven.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -52,7 +53,7 @@
             this.groupbox_Oven.Controls.Add(this.listbox_Oven);
             this.groupbox_Oven.Location = new System.Drawing.Point(729, 68);
             this.groupbox_Oven.Name = "groupbox_Oven";
-            this.groupbox_Oven.Size = new System.Drawing.Size(304, 342);
+            this.groupbox_Oven.Size = new System.Drawing.Size(304, 283);
             this.groupbox_Oven.TabIndex = 0;
             this.groupbox_Oven.TabStop = false;
             this.groupbox_Oven.Text = "Oven";
@@ -63,7 +64,7 @@
             this.listbox_Oven.ItemHeight = 16;
             this.listbox_Oven.Location = new System.Drawing.Point(7, 22);
             this.listbox_Oven.Name = "listbox_Oven";
-            this.listbox_Oven.Size = new System.Drawing.Size(291, 308);
+            this.listbox_Oven.Size = new System.Drawing.Size(291, 244);
             this.listbox_Oven.TabIndex = 0;
             // 
             // groupBox1
@@ -114,6 +115,7 @@
             this.listbox_Salades.Name = "listbox_Salades";
             this.listbox_Salades.Size = new System.Drawing.Size(371, 100);
             this.listbox_Salades.TabIndex = 2;
+            this.listbox_Salades.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listbox_Salades_MouseDoubleClick);
             // 
             // listbox_Dranken
             // 
@@ -123,6 +125,7 @@
             this.listbox_Dranken.Name = "listbox_Dranken";
             this.listbox_Dranken.Size = new System.Drawing.Size(371, 100);
             this.listbox_Dranken.TabIndex = 1;
+            this.listbox_Dranken.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listbox_Dranken_MouseDoubleClick);
             // 
             // listbox_Pizzas
             // 
@@ -132,6 +135,7 @@
             this.listbox_Pizzas.Name = "listbox_Pizzas";
             this.listbox_Pizzas.Size = new System.Drawing.Size(371, 100);
             this.listbox_Pizzas.TabIndex = 0;
+            this.listbox_Pizzas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listbox_Pizzas_MouseDoubleClick);
             // 
             // button_NewItem
             // 
@@ -170,6 +174,7 @@
             this.button_SaveBestelling.TabIndex = 2;
             this.button_SaveBestelling.Text = "Bestelling opslaan";
             this.button_SaveBestelling.UseVisualStyleBackColor = true;
+            this.button_SaveBestelling.Click += new System.EventHandler(this.button_SaveBestelling_Click);
             // 
             // button_RefreshOven
             // 
@@ -180,11 +185,22 @@
             this.button_RefreshOven.Text = "Ververs oven";
             this.button_RefreshOven.UseVisualStyleBackColor = true;
             // 
+            // button_Refresh
+            // 
+            this.button_Refresh.Location = new System.Drawing.Point(730, 358);
+            this.button_Refresh.Name = "button_Refresh";
+            this.button_Refresh.Size = new System.Drawing.Size(300, 48);
+            this.button_Refresh.TabIndex = 6;
+            this.button_Refresh.Text = "Refresh";
+            this.button_Refresh.UseVisualStyleBackColor = true;
+            this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 418);
+            this.Controls.Add(this.button_Refresh);
             this.Controls.Add(this.button_RefreshOven);
             this.Controls.Add(this.button_SaveBestelling);
             this.Controls.Add(this.button_Receipt);
@@ -218,5 +234,6 @@
         private System.Windows.Forms.Button button_Receipt;
         private System.Windows.Forms.Button button_SaveBestelling;
         private System.Windows.Forms.Button button_RefreshOven;
+        private System.Windows.Forms.Button button_Refresh;
     }
 }
