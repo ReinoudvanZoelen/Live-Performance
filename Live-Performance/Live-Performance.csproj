@@ -87,6 +87,7 @@
     <Compile Include="Forms\Receipt.Designer.cs">
       <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\CreateLogic.cs" />
     <Compile Include="Logic\MainFormLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

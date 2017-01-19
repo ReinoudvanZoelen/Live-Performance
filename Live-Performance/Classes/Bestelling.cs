@@ -27,5 +27,15 @@ namespace Live_Performance.Classes
             this.Bezorging = bezorging;
             this.Bestelmoment = bestelmoment;
         }
+
+        public Bestelling(Klant klant)
+        {
+            Klant = klant;
+        }
+
+        public override string ToString()
+        {
+            return $"{Klant.Naam} {Bestelmoment}";
+        }
     }
 }
