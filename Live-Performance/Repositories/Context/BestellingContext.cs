@@ -8,7 +8,7 @@ using Live_Performance.Repositories.RepositoryInterfaces;
 
 namespace Live_Performance.Repositories.Context
 {
-    class BestellingContext : IBestellingRepository
+    public class BestellingContext : IBestellingRepository
     {
         private IBestellingRepository context;
 
@@ -40,6 +40,26 @@ namespace Live_Performance.Repositories.Context
         public List<Bestelling> GetAll()
         {
             return context.GetAll();
+        }
+
+        public void AssignDrankToBestelling(List<Drank> entityProducten)
+        {
+            context.AssignDrankToBestelling(entityProducten);
+        }
+
+        public void AssignSaladeToBestelling(List<Salade> entityProducten)
+        {
+            context.AssignSaladeToBestelling(entityProducten);
+        }
+
+        public void AssignPizzaToBestelling(List<Pizza> entityProducten)
+        {
+            context.AssignPizzaToBestelling(entityProducten);
+        }
+
+        public int GetWachttijd(int bestellingId)
+        {
+            return context.GetWachttijd(bestellingId);
         }
     }
 }

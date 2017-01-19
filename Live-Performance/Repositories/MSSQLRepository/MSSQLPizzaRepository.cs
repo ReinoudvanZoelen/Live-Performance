@@ -161,7 +161,9 @@ namespace Live_Performance.Repositories.MSSQLRepository
 
             string query = "INSERT INTO Pizza(Naam, Custom, Oppervlakte, Afmeting_A, Afmeting_B, Afmeting_C, Glutenvrij) " +
                            "values (@Naam, @Custom, @Oppervlakte, @Afmeting_A, @Afmeting_B, @Afmeting_C, @Glutenvrij)";
-            // todo calculate oppervlakte want die is 0,0000
+            
+            entity.Oppervlakte = CalculateOppervlakte(entity.Afmetingen);
+
             try
             {
                 if (OpenConnection())

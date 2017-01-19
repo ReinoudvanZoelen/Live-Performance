@@ -7,7 +7,11 @@ using Live_Performance.Classes;
 
 namespace Live_Performance.Repositories.RepositoryInterfaces
 {
-    interface IBestellingRepository:IRepository<Bestelling>
+    public interface IBestellingRepository:IRepository<Bestelling>
     {
+        void AssignDrankToBestelling(List<Drank> entityProducten);
+        void AssignSaladeToBestelling(List<Salade> entityProducten);
+        void AssignPizzaToBestelling(List<Pizza> entityProducten);
+        int GetWachttijd(int bestellingId);
     }
 }
