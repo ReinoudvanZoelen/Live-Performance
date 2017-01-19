@@ -7,7 +7,7 @@ using Live_Performance.Classes;
 
 namespace Live_Performance.Repositories.RepositoryInterfaces
 {
-    interface ISaladeRepository:IRepository<Salade>
+    public interface ISaladeRepository:IRepository<Salade>
     {
     }
 }

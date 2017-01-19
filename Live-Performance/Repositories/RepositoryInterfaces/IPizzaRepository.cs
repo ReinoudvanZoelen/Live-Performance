@@ -7,7 +7,7 @@ using Live_Performance.Classes;
 
 namespace Live_Performance.Repositories.RepositoryInterfaces
 {
-    interface IPizzaRepository:IRepository<Pizza>
+    public interface IPizzaRepository:IRepository<Pizza>
     {
     }
 }

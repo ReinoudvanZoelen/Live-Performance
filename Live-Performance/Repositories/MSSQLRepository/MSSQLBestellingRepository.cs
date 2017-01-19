@@ -12,7 +12,7 @@ namespace Live_Performance.Repositories.MSSQLRepository
     class MSSQLBestellingRepository:IBestellingRepository
     {
         private MSSQLKlantRepository KlantRepository = new MSSQLKlantRepository();
-        private MSSQLProductRepository ProductRepository = new MSSQLProductRepository();
+        //private MSSQLBestellingRepository();
 
         string StartQuery = "Select * from Bestelling";
 
@@ -25,9 +25,10 @@ namespace Live_Performance.Repositories.MSSQLRepository
 
             Klant klant = KlantRepository.GetById(klantID);
 
-            List<Product> producten = ProductRepository.GetByBestellingID(id);
+            // TODO: Fix this
+            //List<Product> producten = ProductRepository.GetByBestellingID(id);
 
-            Bestelling bestelling = new Bestelling(id, klant, producten, bezorging, bestelmoment);
+            Bestelling bestelling = new Bestelling(id, klant, null, bezorging, bestelmoment);
 
             return bestelling;
         }

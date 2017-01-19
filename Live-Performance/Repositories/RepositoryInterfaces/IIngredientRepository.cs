@@ -7,7 +7,7 @@ using Live_Performance.Classes;
 
 namespace Live_Performance.Repositories.RepositoryInterfaces
 {
-    interface IIngredientRepository:IRepository<Ingredient>
+    public interface IIngredientRepository:IRepository<Ingredient>
     {
         List<Ingredient> GetByPizzaID(int id);
     }

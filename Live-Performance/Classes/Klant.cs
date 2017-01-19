@@ -26,5 +26,10 @@ namespace Live_Performance.Classes
         {
             
         }
+
+        public override string ToString()
+        {
+            return $"{Naam}";
+        }
     }
 }

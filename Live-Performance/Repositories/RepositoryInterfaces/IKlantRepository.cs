@@ -7,7 +7,7 @@ using Live_Performance.Classes;
 
 namespace Live_Performance.Repositories.RepositoryInterfaces
 {
-    interface IKlantRepository:IRepository<Klant>
+    public interface IKlantRepository:IRepository<Klant>
     {
     }
 }

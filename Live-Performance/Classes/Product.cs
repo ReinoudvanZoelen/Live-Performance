@@ -12,5 +12,10 @@ namespace Live_Performance.Classes
         public string Naam { get; set; }
         public decimal Verkoopprijs { get; set; }
         public decimal Inkoopprijs { get; set; }
+        
+        public override string ToString()
+        {
+            return $"{Naam} €{Verkoopprijs}";
+        }
     }
 }

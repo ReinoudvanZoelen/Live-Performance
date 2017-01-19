@@ -7,7 +7,7 @@ using Live_Performance.Classes;
 
 namespace Live_Performance.Repositories.RepositoryInterfaces
 {
-    interface IDrankRepository:IRepository<Drank>
+    public interface IDrankRepository:IRepository<Drank>
     {
     }
 }
