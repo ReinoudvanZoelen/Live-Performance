@@ -54,6 +54,7 @@
     <Compile Include="TU_MSSQLDrankRepository.cs" />
     <Compile Include="TU_MSSQLIngredientRepository.cs" />
     <Compile Include="TU_MSSQLPizzaRepository.cs" />
+    <Compile Include="TU_MSSQLSaladeRepository.cs" />
     <Compile Include="TU_MSSQLTemplateRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

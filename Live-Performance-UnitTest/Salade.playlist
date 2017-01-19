@@ -1,0 +1,7 @@
+<Playlist Version="1.0">
+<Add Test="Live_Performance_UnitTest.TU_MSSQLSaladeRepository.GetById" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLSaladeRepository.GetAll" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLSaladeRepository.Insert" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLSaladeRepository.Update" />
+<Add Test="Live_Performance_UnitTest.TU_MSSQLSaladeRepository.Delete" />
+</Playlist>
